@@ -1,0 +1,31 @@
+<div class="small-12 page-heading-wrapper">
+	<img src="./assets/img/header/4.jpg" width="100%">
+	<h1 class="page-heading">Works</h1>
+</div>
+
+<div class="container">
+	<ul id="filters" class="clearfix">
+		<li><span class="filter active" data-filter=".website, .webapp, .design">All</span></li>
+		<li><span class="filter" data-filter=".website">Web Site</span></li>
+		<li><span class="filter" data-filter=".webapp">Web App</span></li>
+		<li><span class="filter" data-filter=".design">Design</span></li>
+	</ul>
+
+	<div id="portfoliolist">
+
+		<div *ngFor="let work of works" class="portfolio {{work.type}}">
+			<div class="portfolio-wrapper">				
+				<img src="./assets/img/works/{{work.id}}/cover.jpg" alt="{{work.name}}" />
+				<div class="label">
+					<div class="label-text">
+						<a class="text-title" target="_blank" href="{{work.site}}" rel="nofollow">{{work.name}}</a>
+						<span class="text-category">{{work.shortDesc}}</span>
+					</div>
+					<div class="label-bg"></div>
+				</div>
+			</div>
+		</div>	
+
+	</div>
+
+</div>

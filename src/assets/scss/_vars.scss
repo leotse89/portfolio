@@ -1,0 +1,66 @@
+// Body
+$body-bg: #f5f8fa;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$brand-primary: #3097D1;
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger: #bf5329;
+
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-sans-serif: "Raleway", sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;
+
+/** colors **/
+$white: #FFFFFF;
+$black: #000000;
+$darker-grey: #333333;
+$dark-grey: #666666;
+$light-grey: #aaaaaa;
+$lighter-grey: #f6f5f1;
+$grey: #d3d3d3;
+$light-blue: #12a9f0;
+$lighter-blue: #45C0EE;
+$lighter-yellow: #f7f4eb;
+$orange: #f5a623;
+$blue: #07A3EE;
+$light-blue: #38a8de;
+$red: #ff0000;
+$green: #29b513;
+$light-green: #07d0b8;
+$yellow: #ead223;
+$theme-color: #383838;
+$theme-hover-color:#caffca;
+$fb-blue: #4A6EA9;
+$tt-blue: #00acee;
+$li-blue: #0e76a8;
+$ig-blue: #3f729b;
+$gg-red: #db4a39;
+
+/** fonts **/
+$main-font: 'Roboto Slab', serif;

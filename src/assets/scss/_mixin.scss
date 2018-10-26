@@ -1,0 +1,207 @@
+/*******************************
+*   Preset Cross-Browser CSS   *
+*******************************/
+
+/******
+ Keyframe
+  @include keyframes(slide-down) {
+    0% { opacity: 1; }
+    90% { opacity: 0; }
+  }
+
+  .element {
+    width: 100px;
+    height: 100px;
+    background: black;
+    @include animation('slide-down 5s 3');
+  }
+******/
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+/******
+ Linear Gradient
+******/
+@mixin linear-gradient($deg, $s_color, $e_color) {
+  background-image: -o-linear-gradient($deg, $s_color, $e_color); 
+  background-image: -moz-linear-gradient($deg, $s_color, $e_color); 
+  background-image: -webkit-linear-gradient($deg, $s_color, $e_color); 
+  background-image: linear-gradient($deg, $s_color, $e_color); 
+}
+
+/******
+ Radial Gradient
+ @include radial-gradient(center, ellipse, #555A5F 0%, #000 100%);
+******/
+@mixin radial-gradient($pos, $shape, $from, $to) {
+	background: -moz-radial-gradient($pos, $shape, $from, $to);
+	background: -webkit-radial-gradient($pos, $shape, $from, $to);
+	background: -o-radial-gradient($pos, $shape, $from, $to);
+	background: -ms-radial-gradient($pos, $shape, $from, $to);
+	background: radial-gradient($pos, $shape, $from, $to);
+}
+
+/******
+ Text Shadow
+ @include text-shadow(3px, 3px, 3px, #000);
+******/
+@mixin text-shadow( $top: 3px, $left: 3px, $blur: 3px , $colour: #333 ) {
+  -webkit-text-shadow:$top $left $blur $colour; 
+  -moz-text-shadow:$top $left $blur $colour; 
+  -o-text-shadow:$top $left $blur $colour; 
+  text-shadow:$top $left $blur $colour; 
+} 
+
+/******
+ Box Shadow
+******/
+@mixin box-shadow($top: 3px, $left: 3px, $blur: 4px, $colour: #444, $inset:"") {
+  -webkit-box-shadow: #{$inset} $top $left $blur $colour;
+  -moz-box-shadow:  #{$inset} $top $left $blur $colour;
+  box-shadow: #{$inset} $top $left $blur $colour;
+}
+
+/******
+ Rounded Corners
+******/
+@mixin rounded-corners($tl : 4px, $tr : 4px, $br: 4px, $bl: 4px) {
+  -webkit-border-radius:$tl $tr $br $bl;
+  -moz-border-radius:$tl $tr $br $bl;
+  -o-border-radius:$tl $tr $br $bl;
+  border-radius:$tl $tr $br $bl;
+}
+
+/******
+ Transition
+ @include transition(all .3s ease);
+******/
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+/******
+ Transform
+******/
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+}
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+	     -o-transform-origin: $origin;
+	    -ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+     -moz-transform: translate3d($x, $y, $z);
+       -o-transform: translate3d($x, $y, $z);
+          transform: translate3d($x, $y, $z);
+}
+
+/******
+ Opacity
+ @include opacity(.1);
+******/
+@mixin opacity($value){
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+/******
+ Backface Visibility
+ @include backface-visibility(hidden);
+******/
+@mixin backface-visibility ($arguments) {
+  -webkit-backface-visibility: $arguments;
+     -moz-backface-visibility: $arguments;
+      -ms-backface-visibility: $arguments;
+       -o-backface-visibility: $arguments;
+          backface-visibility: $arguments;
+}
+
+/******
+ Font Smoothing
+ @include font-smoothing(antialiased);
+******/ 
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+/*************************
+*   Preset Buttons CSS   *
+*************************/
+
+/******
+ Transparent Button
+ @include transparent-btn($border-color, 5px, 265px);
+******/
+@mixin transparent-btn($border-color, $border-radius, $btn_width){
+  width: $btn_width;
+  display: block;
+  background: transparent;
+  border: 3px solid $border-color;
+  border-radius: $border-radius;
+  color: $border-color;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 15px;
+  margin:0 auto;
+  @include transition(all .25s ease);
+  &:hover{
+    color: darken($border-color, 15%);
+    border: 3px solid darken($border-color, 15%);
+  } 
+}

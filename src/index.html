@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>Leo Tse's Portfolio</title>
+  	<base href="/">
+  	<link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+  	<link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+  	<link href="//fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Roboto+Slab:400,700" rel="stylesheet">
+  	
+  	<!--[if gte IE 9]>
+  	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  	<![endif]-->
+
+  	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body>
+	<div id="xLoader">
+		<div class='stars'></div>
+		<div class='stars2'></div>
+		<div class='stars3'></div>
+	</div>
+
+	<div class="multilevel-offcanvas off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+		
+		<div class="menu-centered" id="social-menu">
+			<ul class="menu">
+				<li><a href="//www.linkedin.com/in/leo-tse-7273a733/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				<li><a href="//github.com/leotse89" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+				<li><a href="//www.instagram.com/leotse89/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				<li><a href="//www.instagram.com/leotse89/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="menu-centered" id="main-menu">
+			<ul class="vertical menu">
+				<li class="off-canvas-menu-item">
+					<a href="/" routerLinkActive="active">Home</a>
+				</li>
+				<li>
+					<a href="about" routerLinkActive="active">About</a>
+				</li>
+				<li>
+					<a href="works" routerLinkActive="active">Works</a>
+				</li>
+				<li>
+					<a href="blog" routerLinkActive="active">Blog</a>
+				</li>
+				<li>
+					<a href="resume" routerLinkActive="active">Resume</a>
+				</li>
+				<li>
+					<a href="contact" routerLinkActive="active">Contact</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class='stars'></div>
+		<div class='stars2'></div>
+		<div class='stars3'></div>
+	</div>
+
+	<div class="off-canvas-content" data-off-canvas-content>
+	  	<div class="nav-bar">
+	      	<div class="nav-bar-left">
+	        	<ul class="menu">
+			        <li>
+			            <button class="offcanvas-trigger" type="button" data-open="offCanvasLeft" aria-expanded="false" aria-controls="offCanvasLeft">
+							<div class="hamburger">
+								<span class="line"></span>
+								<span class="line"></span>
+								<span class="line"></span>
+							</div>
+							<span class="offcanvas-trigger-text hide-for-small-only">Menu</span>
+						</button>
+			        </li>
+	        	</ul>
+	    	</div>
+	    	<div class="nav-bar-middle">
+	        	<a class="nav-bar-logo"><img class="logo" src="./assets/img/leo-tse-logo.png" alt="Leo Tse's Logo" title="Leo Tse's Logo"></a>
+	      	</div>
+	      	<div class="nav-bar-right hide-for-small-only">
+	      		<ul class="menu">
+					<li><a href="//www.linkedin.com/in/leo-tse-7273a733/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+					<li><a href="//github.com/leotse89" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+					<li><a href="//www.instagram.com/leotse89/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="//www.instagram.com/leotse89/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				</ul>
+	      	</div>
+	  	</div>
+	  	<div class="body-info">
+	    	<app-root>Loading</app-root>
+	    	<footer>
+	    		Created with <i class="fa fa-heart" aria-hidden="true"></i> by Leo Tse © 2017
+	    		<a id="go-up" title="Back to top">
+	    			<i class="fa fa-chevron-up"></i>
+	    		</a>
+	    	</footer>
+	   	</div>
+	</div>
+
+  	<script type="text/javascript" src="./assets/js/jquery.js"></script>
+  	<script type="text/javascript" src="./assets/js/what-input.js"></script>
+  	<script type="text/javascript" src="./assets/js/foundation.js"></script>
+  	<script type="text/javascript" src="./assets/js/vegas.js"></script>
+  	<script type="text/javascript" src="./assets/js/mixitup.min.js"></script>
+  	<script type="text/javascript">
+  		$(document).ready(function(){
+  			//remove preloader in 2 seconds after everything has been loaded
+  			$('#xLoader').fadeOut(2000);
+
+  			//fix off canvas scrolling problem
+  			$(this).on('opened.zf.offcanvas', function(){
+  				$('body').addClass('overflowHidden');
+  			});
+  			$(this).on('closed.zf.offcanvas', function(){
+  				$('body').removeClass('overflowHidden');
+  			});
+
+  			//go to top button
+  			$(document).scroll(function(){
+				if(window.pageYOffset <= 200){
+					$("#go-up").fadeOut();
+				} else {
+					$("#go-up").fadeIn();
+				}
+			});
+
+			$("#go-up").click(function(){
+				$('html,body').animate({ scrollTop: 0 }, 500);
+				return false;
+			});
+
+  			if(window.location.pathname.split('/')[1] == ''){
+  				$('body').vegas({
+  					preload: true,
+				    slides: [
+				        { src: "./assets/img/home/1.jpg" },
+				        { src: "./assets/img/home/2.jpg" },
+				        { src: "./assets/img/home/3.jpg" },
+				        { src: "./assets/img/home/4.jpg" },
+				        { src: "./assets/img/home/5.jpg" }
+				    ],
+				    transition: 'zoomOut',
+				    animation: 'random'
+				});
+
+				$('footer').css({
+					'position': 'absolute',
+					'bottom': 0
+				});
+  			}
+
+  			if(window.location.pathname.split('/')[1] == 'works'){
+	  			var filterList = {
+			
+					init: function () {
+					
+						// MixItUp plugin
+						// http://mixitup.io
+						$('#portfoliolist').mixItUp({
+			  				selectors: {
+			    			  	target: '.portfolio',
+			    			  	filter: '.filter'	
+			    		  	},
+			    		  	load: { 
+			    		  		filter: '.website, .webapp, .design'
+			      			}     
+						});								
+					
+					}
+
+				};
+				
+				filterList.init();
+			}
+  		});
+  		$(document).foundation();
+
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-97840911-1', 'auto');
+		ga('send', 'pageview');
+
+  	</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+.nav-bar {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: $white;
+  background-color: rgba(255,255,255,.5);
+  height: 75px;
+}
+
+.logo{
+  height: 35px;
+}
+
+.fa{
+  margin: 0 !important;
+}
+
+#social-menu{
+  position: absolute;
+  top: 30px;
+  left: 32px;
+}
+
+#main-menu{
+  margin-top: 60px;
+  ul{
+    li{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.nav-bar .nav-bar-logo {
+  padding: 1.8rem;
+}
+
+.nav-bar a {
+  color: #383838;
+  transition: color 0.2s ease-in;
+}
+
+.nav-bar a:hover {
+  color: $blue;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .nav-bar {
+    height: 53.57143px;
+  }
+}
+
+.nav-bar .offcanvas-trigger {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.6rem;
+  color: $black;
+  text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+  @include transition(all .25s ease);
+}
+
+.nav-bar .offcanvas-trigger .offcanvas-trigger-text {
+  margin-left: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.nav-bar .offcanvas-trigger:hover {
+  color: $blue;
+  .hamburger .line{
+    background-color: $blue;
+  }
+}
+
+@media screen and (max-width: 39.9375em) {
+  .nav-bar .offcanvas-trigger {
+    padding: 0.9rem;
+  }
+}
+
+.multilevel-offcanvas {
+  padding: 20px;
+  color: $white;
+}
+
+.multilevel-offcanvas > .menu {
+  margin-bottom: 1rem;
+}
+
+.multilevel-offcanvas .menu a {
+  color: $white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  transition: color 0.2s ease-in;
+}
+
+.multilevel-offcanvas .menu a:hover {
+  color: $blue !important;
+}
+
+.multilevel-offcanvas .is-accordion-submenu-parent > a::after {
+  border-color: rgba(254, 254, 254, 0.6) transparent transparent;
+}
+
+.multilevel-offcanvas .social-links {
+  margin-left: 20px;
+}
+
+.multilevel-offcanvas .social-links li {
+  margin-right: 5px;
+}
+
+.multilevel-offcanvas .social-links a:hover .fa {
+  color: #bebebe;
+  transition: color .2s ease-in;
+}
+
+.multilevel-offcanvas .social-links .fa {
+  font-size: 2.2rem;
+}
+
+.body-info .button {
+  margin: 1rem 0;
+  padding: 0.85em 2em;
+}
+
+.off-canvas.is-open{
+  overflow: hidden !important;
+}
+
+.is-open + .off-canvas-content .hamburger .line:nth-child(1),
+.is-open + .off-canvas-content .hamburger .line:nth-child(3) {
+  width: 20px;
+  -webkit-transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,opacity 0.1s ease-in-out 0.1s;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s,opacity 0.1s ease-in-out 0.1s;
+  transform: translateZ(0);
+}
+
+.is-open + .off-canvas-content .hamburger .line:nth-child(1) {
+  -webkit-transform: translateY(6px) rotateZ(-135deg);
+  transform: translateY(6px) rotateZ(-135deg);
+  margin-bottom: 5px;
+}
+
+.is-open + .off-canvas-content .hamburger .line:nth-child(2) {
+  opacity: 0;
+}
+
+.is-open + .off-canvas-content .hamburger .line:nth-child(3) {
+  -webkit-transform: translateY(-6px) rotateZ(135deg);
+  transform: translateY(-6px) rotateZ(135deg);
+}
+
+.nav-bar-left{
+  position: absolute;
+  left: 0;
+}
+
+.nav-bar-middle{
+  margin: 0 auto;
+}
+
+.nav-bar-right{
+  position: absolute;
+  right: 0;
+}
+
+.hamburger .line {
+  width: 20px;
+  height: 2px;
+  background-color: #383838;
+  display: block;
+  margin: 3px auto;
+  @include transition(all 0.25s ease);
+}
+
+.hamburger .line:last-child {
+  margin-bottom: 0;
+}
